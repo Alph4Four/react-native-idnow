@@ -2,7 +2,6 @@
 package com.bitwala.idnow;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.widget.Toast;
 
 import com.facebook.react.bridge.ActivityEventListener;
@@ -23,8 +22,7 @@ public class RNIdnowModule extends ReactContextBaseJavaModule {
     private Promise idnowPromise;
 
     private final ActivityEventListener idnowActivityEventListener = new BaseActivityEventListener() {
-        @Override
-        public void onActivityResult(Activity activity, int requestCode, int resultCode, Intent intent) {
+        public void onActivityResult(Activity activity, int requestCode, int resultCode) {
             switch (resultCode) {
 
                 case IDnowSDK.RESULT_CODE_SUCCESS:
